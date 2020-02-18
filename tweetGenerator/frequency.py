@@ -32,7 +32,7 @@ def get_tokens(histogram):
 
 def sample(rand_histogram):
     tokens = get_tokens(rand_histogram)
-    rand_num = randint(0, tokens)
+    rand_num = randint(1, tokens)
     total = 0
     for key, value in rand_histogram.items():
         total += value

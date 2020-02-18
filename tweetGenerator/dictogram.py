@@ -14,25 +14,36 @@ class Dictogram:
 
     def build_dictogram(self): 
         '''Creates a histogram dictionary using the word_list property and returns it'''
-
-        #TODO: use your histogram function as a starting point to complete this method
-        pass
+        histogram = {}
+        for word in self.word_list:
+            if word in histogram:
+                histogram[word]+= 1
+            else: 
+                histogram[word] = 1
+        return histogram
 
     def frequency(self, word):
         '''returns the frequency or count of the given word in the dictionary histogram'''
-        #TODO: use your frequency function as a starting point to complete this method
-        pass
+        return self.dictionary_histogram[word]
 
     def unique_words(self):
         '''returns the number of unique words in the dictionary histogram'''
-        #TODO: use your unique words function as a starting point to complete this method
-        pass
+        return len(self.dictionary_histogram)
 
     def sample(self):
         '''Randomly samples from the dictionary histogram based on the frequency, returns a word'''
-
         #TODO: use your sample function as a starting point to complete this method 
-        pass
+        rand_num = randint(1, self.tokens)
+        total = 0
+        for key, value in self.dictionary_histogram.items():
+            total += value
+            if total >= rand_num:
+                return key
+        
+def open_file(filename):
+    lines = open(filename, "r").read()
+    words = lines.split()
+    return words
 
 def print_dictogram(word_list):
     '''Creates a dictionary based histogram (dictogram) and then prints out its properties and samples from it'''
@@ -86,6 +97,6 @@ def print_dictogram_samples(dictogram):
             + '| {}{:>+7.2%}{} |'.format(color, error, reset))
     print(divider)
     print()
-
-print_dictogram(['one', 'fish', 'two', 'fish', 'red', 'fish', 'blue', 'fish'])
+if __name__ == '__main__':
+    print_dictogram(['one', 'fish', 'two', 'fish', 'red', 'fish', 'blue', 'fish'])
 
