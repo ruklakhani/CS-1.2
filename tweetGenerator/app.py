@@ -7,11 +7,11 @@ frank_hist = Dictogram(word_list)
 
 app = Flask(__name__)
 
-@app.route('/')
-def hello_world():
-    return 'Hello, World!'
+# @app.route('/')
+# def hello_world():
+#     return 'Hello, World!'
 
-@app.route('/randomwords')
+@app.route('/')
 def random_words():
     rand_words = []
     for _ in range(5):
