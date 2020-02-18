@@ -1,5 +1,6 @@
 from flask import Flask, render_template
 from dictogram import *
+from pymongo import MongoClient
 import os 
 
 word_list = open_file("text.txt")
