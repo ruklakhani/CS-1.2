@@ -39,6 +39,8 @@ def sample(rand_histogram):
         if total >= rand_num:
             return key
 
+def walk():
+    
 
 my_histogram = histogram()
 
