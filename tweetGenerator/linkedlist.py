@@ -113,6 +113,11 @@ class LinkedList(object):
                 node = node.next
             raise ValueError('Item not found: {}'.format(item))
 
+    def replace(self, old, new):
+        if old in self.items():
+            self.delete(old)
+        self.append(new)
+
 
 def test_linked_list():
     ll = LinkedList()

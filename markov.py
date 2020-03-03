@@ -1,4 +1,5 @@
 from dictogram import Dictogram
+import random
 
 class MarkovChain:
 
@@ -29,10 +30,12 @@ class MarkovChain:
 
         return markov_chain
 
-    def walk(self, num_words):
+    def walk(self, num_words, first_word=None):
         #TODO: generate a sentence num_words long using the markov chain
-        sentence=[self.first_word]
-        word = self.first_word
+        if first_word is None:
+            first_word = self.first_word
+        sentence=[first_word]
+        word = first_word
         for i in range(num_words-1):
             word = self.markov_chain[word].sample()
             sentence.append(word)
